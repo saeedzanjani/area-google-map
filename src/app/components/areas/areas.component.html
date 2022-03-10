@@ -1,0 +1,114 @@
+<div class="container_area">
+  <agm-map
+    [latitude]="hatricShoppingCentreLat"
+    [longitude]="hatricShoppingCentreLng"
+  >
+    <agm-marker
+      [latitude]="hatricShoppingCentreLat"
+      [longitude]="hatricShoppingCentreLng"
+      [iconUrl]="placeIcon"
+    >
+
+      <agm-info-window>
+        <strong>Store Location</strong>
+        <br/><br/>
+        <p>Store details</p>
+      </agm-info-window>
+
+      <agm-data-layer [geoJson]="showHatricBike && hatricBike">
+      </agm-data-layer>
+
+      <agm-data-layer [geoJson]="showHatricWalk && hatricWalk">
+      </agm-data-layer>
+    </agm-marker>
+
+    <agm-marker
+      [latitude]="angersiedlungLat"
+      [longitude]="angersiedlungLng"
+      [iconUrl]="placeIcon"
+    >
+
+      <agm-info-window>
+        <strong>Store Location</strong>
+        <br/><br/>
+        <p>Store details</p>
+      </agm-info-window>
+
+      <agm-data-layer [geoJson]="showAngersiedlungBike && angersiedlungBike">
+      </agm-data-layer>
+
+      <agm-data-layer [geoJson]="showAngersiedlungWalk && angersiedlungWalk">
+      </agm-data-layer>
+    </agm-marker>
+
+    <agm-marker
+      [latitude]="hauptplatzLat"
+      [longitude]="hauptplatzLng"
+      [iconUrl]="placeIcon"
+    >
+
+      <agm-info-window>
+        <strong>Store Location</strong>
+        <br/><br/>
+        <p>Store details</p>
+      </agm-info-window>
+    </agm-marker>
+
+    <agm-data-layer [geoJson]="showHauptplatzBike && hauptplatzBike">
+    </agm-data-layer>
+
+    <agm-data-layer [geoJson]="showHauptplatzWalk && hauptplatzWalk">
+    </agm-data-layer>
+
+    <agm-marker [latitude]="hauptplatzLat" [longitude]="hauptplatzLng"  [visible]="false">
+
+    </agm-marker>
+  </agm-map>
+
+<div
+  class="places"
+>
+  <mat-checkbox
+    class="show_checkbox"
+    [(ngModel)]="showAngersiedlungBike"
+  >
+    Show Angersiedlung Bike
+  </mat-checkbox>
+
+  <mat-checkbox
+    [(ngModel)]="showAngersiedlungWalk"
+    class="show_checkbox"
+  >
+    Show Angersiedlung Walk
+  </mat-checkbox>
+
+  <mat-checkbox
+    [(ngModel)]="showHatricBike"
+    class="show_checkbox"
+  >
+    Show Hatric Bike
+  </mat-checkbox>
+
+  <mat-checkbox
+    [(ngModel)]="showHatricWalk"
+    class="show_checkbox"
+  >
+    Show Hatric Walk
+  </mat-checkbox>
+
+  <mat-checkbox
+    [(ngModel)]="showHauptplatzBike"
+    class="show_checkbox"
+  >
+    Show Hauptplatz Bike
+  </mat-checkbox>
+
+  <mat-checkbox
+    [(ngModel)]="showHauptplatzWalk"
+    class="show_checkbox"
+  >
+    Show Hauptplatz Walk
+  </mat-checkbox>
+</div>
+
+</div>
